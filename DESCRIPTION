@@ -4,8 +4,10 @@ Title: An R package for ploting and calculating statistics for DRG data
 Version: 0.1.0
 Author: Emily Carter, Keyi Kang, Yifan Lu
 Maintainer: Emily Carter, Keyi Kang, Yifan Lu
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package contains two function and a dataset. 
+    The "DRG_data" include hospital-specific charges for year 2011.
+    The "drg_boxplot" function makes a boxplot of payments.
+    The "calculate_statistics" function calculates statistics over all of the DRG codes for average Medicare payments
 License: NA
 Encoding: UTF-8
 LazyData: true
