@@ -1,4 +1,4 @@
-#' DRG Boxplot
+#' DRG Boxplot (Function 1)
 #'
 #' This function will produce a ggplot boxplot of \code{variable} by DRG code.
 #'
