@@ -5,6 +5,8 @@
 #' @return either the mean, median or standard deviation of average
 #' @export
 #'
+#' @importFrom dplyr summarise
+#'
 #' @examples
 #' DRG <- read_csv("DRG_data.csv")
 #'
