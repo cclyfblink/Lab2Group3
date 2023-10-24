@@ -17,6 +17,7 @@
 calculate_statistics <- function(data, stat_type) {
     if (stat_type %in% c("mean", "median", "std")) {
         result_df <- data %>%
+            group_by(`DRG Definition`) %>%
             summarise(
                 StatValue = case_when(
                     stat_type == "mean"   ~ mean(`Average Medicare Payments`),
