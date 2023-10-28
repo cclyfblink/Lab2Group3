@@ -19,9 +19,9 @@
 calculate_statistics <- function(data, stat_type) {
     if (stat_type %in% c("mean", "median", "std")) {
         result_df <- data %>%
-            group_by(`DRG Definition`) %>%
+            group_by(`DRG Definition`) %>% # group by DRG
             summarise(
-                StatValue = case_when(
+                StatValue = case_when( # calculate statistic
                     stat_type == "mean"   ~ mean(`Average Medicare Payments`),
                     stat_type == "median" ~ median(`Average Medicare Payments`),
                     stat_type == "std"    ~ sd(`Average Medicare Payments`)
@@ -29,7 +29,7 @@ calculate_statistics <- function(data, stat_type) {
             ) %>%
             kable(col.names = c("DRG Definition", str_to_title(stat_type)))
         return(result_df)
-    } else {
+    } else { # if incorrect input
         stop("Invalid stat_type. Choose from 'mean', 'median', or 'std'")
     }
 }
