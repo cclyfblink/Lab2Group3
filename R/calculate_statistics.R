@@ -6,6 +6,7 @@
 #' @export
 #'
 #' @importFrom dplyr summarise
+#' @import stringr
 #'
 #' @examples
 #' DRG <- read_csv("DRG_data.csv")
@@ -24,7 +25,8 @@ calculate_statistics <- function(data, stat_type) {
                     stat_type == "median" ~ median(`Average Medicare Payments`),
                     stat_type == "std"    ~ sd(`Average Medicare Payments`)
                 )
-            )
+            ) %>%
+            kable(col.names = c("DRG Definition", str_to_title(stat_type)))
         return(result_df)
     } else {
         stop("Invalid stat_type. Choose from 'mean', 'median', or 'std'")

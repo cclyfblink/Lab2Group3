@@ -21,8 +21,9 @@ drg_boxplot <- function(data, variable = c("Average Covered Charges",
         stop("Not a valid variable")
     }
     ggplot(data = data, aes(y = get(variable), x = str_extract(get("DRG Definition"), regexp <- "[[:digit:]]+"))) +
-        geom_boxplot() +
+        geom_boxplot(outlier.size = 0.8) +
         labs(x = "DRG Code", y = variable, title = paste(variable, "by DRG Code")) +
         theme_bw() +
-        theme(axis.text.x = element_text(angle=90, hjust=1))
+        theme(axis.text.x = element_text(angle=90, hjust=1),
+              axis.text = element_text(size = 5.5))
 }
