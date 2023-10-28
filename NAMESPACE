@@ -3,5 +3,6 @@
 export(calculate_statistics)
 export(drg_boxplot)
 import(ggplot2)
+import(knitr)
 import(stringr)
 importFrom(dplyr,summarise)

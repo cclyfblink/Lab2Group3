@@ -7,6 +7,7 @@
 #'
 #' @importFrom dplyr summarise
 #' @import stringr
+#' @import knitr
 #'
 #' @examples
 #' DRG <- read_csv("DRG_data.csv")
